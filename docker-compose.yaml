@@ -11,17 +11,17 @@ services:
     image: postgres:14-alpine
     restart: on-failure
     environment:
-      - POSTGRES_USER=ctf-gameserver
-      - POSTGRES_DB=ctf-gameserver
-      - POSTGRES_PASSWORD=9iyzXY6pMYzRvXZi
-      - TZ=UTC
-      - PGTZ=UTC
+      POSTGRES_USER: ctf-gameserver
+      POSTGRES_DB: ctf-gameserver
+      POSTGRES_PASSWORD: 9iyzXY6pMYzRvXZi
+      TZ: UTC
+      PGTZ: UTC
     volumes:
       - pgdata:/var/lib/postgresql/data 
     networks:
       - gameserver
     ports:
-      - 5432:5432
+      - '5432'
 
   gameserver-memcached:
     image: memcached:1.6-alpine
@@ -56,7 +56,7 @@ services:
     networks:
       - gameserver
     ports:
-      - 5000:5000
+      - '8080:8080'
     environment:
       - CTF_IPPATTERN=10.10.%s.1
 
@@ -70,7 +70,7 @@ services:
     networks:
       - gameserver
     ports:
-      - 8000:80
+      - 8081:80
     environment:
       - BACKEND_URL=http://gameserver-web:5000
 
@@ -85,7 +85,7 @@ services:
     networks:
       - gameserver
     ports:
-      - 31337:31337
+      - '31337:31337'
     environment:
       - CTF_LOGLEVEL=DEBUG
       - CTF_DBHOST=gameserver-postgres

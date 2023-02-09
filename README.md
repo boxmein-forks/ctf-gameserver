@@ -1,3 +1,8 @@
+CTF Gameserver (ICC 2023 Team Europe Training Version)
+==============
+
+
+
 CTF Gameserver (ECSC 2022 Version)
 ==============
 
