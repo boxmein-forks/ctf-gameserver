@@ -1,5 +1,5 @@
 ---
-competition_name: "ECSC 2022 | Attack-Defense"
+competition_name: "ICC 2023 Team Europe Training | Attack-Defense"
 # dates in UTC, Vienna local time is 2h later
 services_public: '2022-09-04 19:00:00+00' # TODO change
 event_start:     '2023-09-04 19:50:00+00' # TODO change
@@ -7,7 +7,7 @@ event_freeze:    '2023-09-04 19:54:00+00'
 event_end:       '2023-09-04 19:59:00+00'
 tick_duration: 60 # TODO change
 valid_ticks: 5 # NOTE: changing this value also requires adjusting the checkerlib and the scoreboard
-flag_prefix: 'ECSC_'
+flag_prefix: 'ICC_'
 
 gamedb_host: gameserver-postgres
 pgpassword: 9iyzXY6pMYzRvXZi
