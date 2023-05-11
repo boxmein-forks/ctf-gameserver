@@ -29,6 +29,7 @@ services:
       - gameserver
 
   gameserver-web-init:
+    image: ghcr.io/boxmein-forks/ctf-gameserver-web-init
     build:
       context: .
       dockerfile: Dockerfile
@@ -46,6 +47,7 @@ services:
       - PGPASSWORD=9iyzXY6pMYzRvXZi
       
   gameserver-web:
+    image: ghcr.io/boxmein-forks/ctf-gameserver-web
     build:
       context: .
       dockerfile: Dockerfile
@@ -61,6 +63,7 @@ services:
       - CTF_IPPATTERN=10.10.%s.1
 
   gameserver-scoreboard:
+    image: ghcr.io/boxmein-forks/ctf-gameserver-scoreboard
     build:
       context: saarctf-gameserver/scoreboard
       dockerfile: Dockerfile
@@ -75,6 +78,7 @@ services:
       - BACKEND_URL=http://gameserver-web:5000
 
   gameserver-submission:
+    image: ghcr.io/boxmein-forks/ctf-gameserver-submission
     build:
       context: .
       dockerfile: Dockerfile
@@ -98,6 +102,7 @@ services:
       --listen 0.0.0.0:31337
 
   gameserver-controller:
+    image: ghcr.io/boxmein-forks/ctf-gameserver-controller
     build:
       context: .
       dockerfile: Dockerfile
